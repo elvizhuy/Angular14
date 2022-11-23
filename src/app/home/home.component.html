@@ -11,14 +11,22 @@
   <h3 *ngIf="age > 25">You r too old</h3>
   <h3 *ngIf="age <= 25">You r still young</h3>
 
+  <div *ngIf="age > 25;then young;else old"></div>
+  <ng-template #young>
+    <h3> You r still young!</h3>
+  </ng-template>
+  <ng-template #old>
+    <h3>You r too old!</h3>
+  </ng-template>
+
   <h1>Event Binding</h1>
   <input type="text" [(ngModel)]="fullname">
   <p>Hi! {{fullname}}</p>
   <button (click)="resetName()">Reset</button>
 </div>
 
-
-<h3>Fruits</h3>
+<div>
+  <h3>Fruits</h3>
 <table>
 
 </table>
@@ -31,3 +39,6 @@
 <select id="district">
   <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
 </select>
+</div>
+
+
