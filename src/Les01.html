@@ -7,25 +7,138 @@
 
 </head>
 <body>
-<div ng-app="Ang-02">
-  <div ng-controller="myctrl1">
-    <h1>{{Variable1}}</h1>
-    <h1>{{Variable2}}</h1>
-  </div>
-  <div ng-controller="myctrl2">
-    <h1>{{Variable1}}</h1>
-    <h1>{{Variable2}}</h1>
-  </div>
-  <script>
-    var app = angular.module('Ang-02',[])
-    app.controller('myctrl1',($scope)=>{
-      $scope.Variable1 = "this is first var"
-    })
-    var app = angular.module('Ang-02',[])
-    app.controller('myctrl2',($scope)=>{
-      $scope.Variable2 = "this is second var"
-    })
-  </script>
+<!--<div ng-app="Ang-02">-->
+<!--  <div ng-controller="myctrl1">-->
+<!--    <h1>{{Variable1}}</h1>-->
+<!--    <h1>{{Variable2}}</h1>-->
+<!--  </div>-->
+<!--  <div ng-controller="myctrl2">-->
+<!--    <h1>{{Variable1}}</h1>-->
+<!--    <h1>{{Variable2}}</h1>-->
+<!--  </div>-->
+<!--  <script type="text/javascript">-->
+<!--    angular.module('Ang-02',[]).controller('myctrl1',($scope)=>{-->
+<!--      $scope.Variable1 = "this is first var"-->
+<!--    })-->
+<!--    angular.module('Ang-02',[]).controller('myctrl2',($scope)=>{-->
+<!--      $scope.Variable2 = "this is second var"-->
+<!--    })-->
+<!--  </script>-->
+<!--</div>-->
+
+<!--Adding a Directive-->
+<div ng-app="Ang-02" w3-test-directive></div>
+
+<script>
+  var app = angular.module("Ang-02", []);
+
+  app.directive("w3TestDirective", function () {
+    return {
+      template: "I was made in a directive constructor!"
+    };
+  });
+</script>
+
+<!--Data Binding-->
+<div data-ng-app="" data-ng-init="quantity=0;price=0">
+  <h2>Cost Calculator</h2>
+  Quantity: <input type="number" ng-model="quantity">
+  Price: <input type="number" ng-model="price">
+  <p><b>Total in dollar:</b> {{quantity * price}}</p>
 </div>
+
+<!--Repeating HTML Elements-->
+<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+  <ul>
+    <li ng-repeat="x in names">
+      {{ x }}
+    </li>
+  </ul>
+</div>
+
+<div ng-app="" ng-init="names1=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+  <ul>
+    <li ng-repeat="x in names1">
+      {{ x.name + ', ' + x.country }}
+    </li>
+  </ul>
+</div>
+
+<!--Create New Directives-->
+<!--You can invoke a directive by using:-->
+<!--Element name-->
+<!--Attribute-->
+<!--Class-->
+<!--Comment-->
+<!--The examples below will all produce the same result:-->
+<w3-test-directive></w3-test-directive>
+<div w3-test-directive></div>
+<div class="w3-test-directive"></div>
+<script>
+  var app = angular.module("Ang-02", []);
+  app.directive("w3TestDirective", () => {
+    return {
+      template: "<h1>Made by a directive!</h1>"
+    };
+  });
+</script>
+<!--============================================-->
+<!-- directive: w3-test-directive -->
+
+<!--<script>-->
+<!--  var app = angular.module("myApp", []);-->
+<!--  app.directive("w3TestDirective", function() {-->
+<!--    return {-->
+
+<!--      restrict : "M",-->
+<!--      replace : true,-->
+<!--      template : "<h1>Made by a directive!</h1>"-->
+<!--    };-->
+<!--  });-->
+<!--</script>-->
+
+<!--<p><strong>Note:</strong> We've added the <strong>replace</strong> property in this example, otherwise the comment would be invisible.</p>-->
+<!--<p><strong>Note:</strong> You must add the value "M" to the <strong>restrict</strong> property to be able to invoke the directive from a comment.</p>-->
+
+<!--=============================================================================================-->
+<div class="w3-test-directive"></div>
+
+<!--<script>-->
+<!--  var app = angular.module("myApp", []);-->
+<!--  app.directive("w3TestDirective", function() {-->
+<!--    return {-->
+<!--      restrict : "C",-->
+<!--      template : "<h1>Made by a directive!</h1>"-->
+<!--    };-->
+<!--  });-->
+<!--</script>-->
+
+<!--<p><strong>Note:</strong> You must add the value "C" to the restrict property to be able to invoke the directive from a class name.</p>-->
+<!--=======================================================================-->
+<!--Restrictions-->
+The legal restrict values are:
+E for Element name
+A for Attribute
+C for Class
+M for Comment
+By default the value is EA, meaning that both Element names and attribute names can invoke the directive.
+
+<w3-test-directive></w3-test-directive>
+<div w3-test-directive></div>
+<script>
+  var app = angular.module("myApp", []);
+  app.directive("w3TestDirective", function () {
+    return {
+      restrict: "A",
+      template: "<h1>Made by a directive!</h1>"
+    };
+  });
+</script>
+
+<p><strong>Note:</strong> By setting the <strong>restrict</strong> property to "A", only the HTML element with the
+  "w3-test-directive" attribute has invoked the directive.</p>
 </body>
 </html>

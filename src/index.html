@@ -1,13 +1,114 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="Angular14">
 <head>
   <meta charset="utf-8">
   <title>Ang02</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 </head>
 <body>
-  <app-root></app-root>
+<!-- <div ng-app="">
+  <p>Input something in the input box:</p>
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p ng-bind="name"></p>
+</div>
+
+<div ng-app="" ng-init="firstName='Daniel'">
+  <p>The name is <span ng-bind="firstName"></span></p>
+</div>
+
+<div data-ng-app="" data-ng-init="firstName='Huy'">
+  <p>The name is <span data-ng-bind="firstName"></span></p>
+</div>
+
+<div ng-app="">
+  <p>My first expression: {{ 5 + 5 }}</p>
+</div>
+
+<div ng-app="">
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p>{{name}}</p>
+</div>
+
+<div ng-app="" ng-init="myCol='lightblue'">
+  <input style="background-color:{{myCol}}" ng-model="myCol">
+</div>
+
+<div ng-app="" ng-init="quantity=1;cost=5">
+  <p>Total in dollar: {{ quantity * cost }}</p>
+</div>
+<div ng-app="" ng-init="quantity=1;cost=5">
+  <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+</div> -->
+
+<!--AngularJS Strings
+<div ng-app="" ng-init="firstName='Daniel';lastName='Davies'">
+  <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+</div>
+<div ng-init="firstName='Daniel';lastName='Davies'" >
+  <p>My name is {{firstName +' '+ lastName}}</p>
+</div>
+
+<!--AngularJS Object
+<div ng-app="" ng-init="person={firstName:'Daniel',lastName:'davies'}">
+  <p>The name is {{ person.lastName }}</p>
+</div>
+<div ng-app="" ng-init="person={firstName:'Daniel',lastName:'davies'}">
+  <p>The name is <span ng-bind="person.lastName"></span></p>
+</div>
+
+<!--AngularJS Arrays
+<div ng-app="" ng-init="points=[1,15,19,2,40]">
+  <p>The third result is {{ points[2] }}</p>
+</div>
+<div ng-app="" ng-init="points=[1,15,19,2,40]">
+  <p>The third result is <span ng-bind="points[2]"></span></p>
+</div> -->
+
+<!--AngularJS Expressions vs. JavaScript Expressions-->
+
+<!--AngularJS Modules-->
+<!-- <p>Try to change the names.</p>
+<div ng-app="" ng-controller="Ctrl1">
+  First Name: <input type="text" ng-model="firstName"><br>
+  Last Name: <input type="text" ng-model="lastName"><br>
+  <br>
+  Full Name: {{firstName + " " + lastName}}
+</div>
+<script>
+let app = angular.module('Ang-02', []);
+app.controller('Ctrl1', ($scope) => {
+$scope.firstName= "Nguyen Ngoc";
+$scope.lastName= "Huy";
+});
+</script> -->
+
+<!--<div ng-app="">-->
+<!--  <div  ng-controller="Ctrl2">-->
+<!--    {{ Email + " " + Address }}-->
+<!--  </div>-->
+<!--  <div  ng-controller="Ctrl3">-->
+<!--    {{ phone + " " + age }}-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  let app = angular.module("Ang-02", []);-->
+<!--  app.controller("Ctrl2", ($scope) => {-->
+<!--    $scope.Email = "Elvizhuy@gmail.com";-->
+<!--    $scope.Address = "HaNoi";-->
+<!--  });-->
+
+<!--  let app = angular.module("Ang-02", []);-->
+<!--  app.controller("Ctrl3", ($scope) => {-->
+<!--    $scope.phone = "0932299609";-->
+<!--    $scope.age = 32;-->
+<!--  });-->
+<!--</script>-->
+
 </body>
 </html>
+ <app-root></app-root>

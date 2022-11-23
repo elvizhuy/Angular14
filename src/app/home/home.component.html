@@ -1,0 +1,39 @@
+<div class="learning">
+  <h1>this is component HOME</h1>
+  <p>Data binding</p>
+  <p>{{name}}</p>
+  <input type="text" value="{{name}}">
+  <br>
+  <input type="text" [value]="subName" title="This is {{titleName}}">
+  <br>
+  <input type=" text" [value]="name" [title]="'This is ' + titleName">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3>Fruits</h3>
+<table>
+
+</table>
+
+<h3>City</h3>
+<select id="city" (change)="changeCity($event)">
+  <option *ngFor="let data of CountryData" value="{{data.city}}">{{data.city}}</option>
+</select>
+<h3>District</h3>
+<select id="district">
+  <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
+</select>

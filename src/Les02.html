@@ -1,10 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="Ang-02">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AngularJS & Bootstrap Tutorial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- B1. Them thu vien cua AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
-<body>
-$END$
+<body ng-controller="MyController" style="background-color: {{ color }};">
+<div class="container">
+  <div class="panel-heading">
+    <h2 class="text-center">{{ title }}</h2>
+  </div>
+  <div class="panel-body">
+    <!-- Nhap tieu de web -->
+    <div class="form-group">
+      <label for="usr">Change Title Name :</label>
+      <label for=""> Color Change: </label> <input required="true" type="color" ng-model="color">
+      <!-- AngularJS: binding data ng-model -> {{ title }} -->
+      <input required="true" type="text" class="form-control" id="title" ng-model="title">
+
+    </div>
+
+    <div class="form-group">
+      <label for="usr">Name:</label>
+      <input required="true" type="text" class="form-control" id="usr" ng-model="user.fullname">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input required="true" type="email" class="form-control" id="email" ng-model="user.email">
+    </div>
+    <div class="form-group">
+      <label for="birthday">Birthday:</label>
+      <input type="date" class="form-control" id="birthday" ng-model="user.birthday">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input required="true" type="password" class="form-control" id="pwd" ng-model="user.password">
+    </div>
+    <div class="form-group">
+      <label for="confirmation_pwd">Confirmation Password:</label>
+      <input required="true" type="password" class="form-control" id="confirmation_pwd" ng-model="user.confirmPwd">
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" class="form-control" id="address" ng-model="user.address">
+    </div>
+
+    <button class="btn btn-success" ng-click="saveData()">Register</button>
+
+    <ul style="list-style:none">
+      <li>{{ user.fullname }}</li>
+      <li>{{ user.email }}</li>
+      <li>{{ user.birthday }}</li>
+      <li>{{ user.password }}</li>
+      <li>{{ user.confirmPwd }}</li>
+      <li>{{ user.address }}</li>
+    </ul>
+
+    <input type="text" class="form-control" id="address" ng-model="x">
+    <input type="text" class="form-control" id="address" ng-model="y">
+    <button class="btn btn-success" ng-click="tinhtong()">Tinh Tong</button>
+
+    Ket Qua: {{ s }}
+
+    <br/>
+    <table class="table table-bordered">
+      <tr>
+        <th>STT</th>
+        <th>x</th>
+        <th>y</th>
+        <th>tong</th>
+      </tr>
+      <tr ng-repeat="item in historyList">
+        <td></td>
+        <td>{{ item.x }}</td>
+        <td>{{ item.y }}</td>
+        <td>{{ item.s }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  // Xu ly code angularjs
+  // Luu y: Code // angularjs + jquery + js => trong cung 1 trang web.
+  // Khoi tao du lieu code cho AngularJS
+  var app = angular.module("Ang-02", []);
+
+  app.controller("MyController", ($scope) => {
+    //$scope -> quan ly toan bien binding <-> thanh phan bien trong html
+    $scope.title = 'Register Form'
+    $scope.color = '#ffffff'
+    $scope.historyList = []
+    //Khai niem object trong AngularJS
+
+    $scope.saveData = () => {
+      console.log($scope.user.fullname)
+    }
+
+    $scope.tinhtong = () => {
+      $scope.s = parseInt($scope.x) + parseInt($scope.y)
+      let history = {
+        "x": $scope.x,
+        "y": $scope.y,
+        "s": $scope.s
+      }
+      // console.log(history)
+      $scope.historyList.push(history)
+      // console.log($scope.historyList)
+    }
+  });
+</script>
 </body>
 </html>
