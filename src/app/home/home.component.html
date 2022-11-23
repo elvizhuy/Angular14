@@ -25,20 +25,18 @@
   <button (click)="resetName()">Reset</button>
 </div>
 
-<div>
+<div class="learning 2">
   <h3>Fruits</h3>
-<table>
+  <table>
 
-</table>
+  </table>
 
-<h3>City</h3>
-<select id="city" (change)="changeCity($event)">
-  <option *ngFor="let data of CountryData" value="{{data.city}}">{{data.city}}</option>
-</select>
-<h3>District</h3>
-<select id="district">
-  <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
-</select>
+  <h3>City</h3>
+  <select id="city" (change)="changeCity($event)">
+    <option *ngFor="let data of CountryData" value="{{data.city}}">{{data.city}}</option>
+  </select>
+  <h3>District</h3>
+  <select id="district">
+    <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
+  </select>
 </div>
-
-
