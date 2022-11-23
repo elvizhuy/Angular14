@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public fullname = 'Ng Ng huy';
   public name = 'My name is Huy';
-  public subName = 'My name is Daniel'
-  public titleName = 'Elviz'
-  public age = 25
+  public subName = 'My name is Daniel';
+  public titleName = 'Elviz';
+  public age = 25;
+
   public CountryData = [
     {
       city: '-- Cities --',
@@ -66,6 +68,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log('VietnamCities = ', this.CountryData);
   }
+
+  public resetName(): void {
+    this.fullname = '';
+  }
+
   public changeCity(event: any) {
     // CÁCH 1
     const city = event.target.value;
