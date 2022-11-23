@@ -9,6 +9,7 @@ export class HomeComponent implements OnInit {
   public name = 'My name is Huy';
   public subName = 'My name is Daniel'
   public titleName = 'Elviz'
+  public age = 25
   public CountryData = [
     {
       city: '-- Cities --',
