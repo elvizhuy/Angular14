@@ -25,12 +25,38 @@
   <button (click)="resetName()">Reset</button>
 </div>
 
-<div class="learning 2">
-  <h3>Fruits</h3>
-  <table>
+<div class="learning2">
+  <div id="fruit-learning">
+    <div id="fruitList">
+      <h3>Fruits</h3>
+      <ul *ngFor="let fruit of Fruits">
+        <li value="{{fruit}}">{{fruit}}</li>
+      </ul>
+    </div>
+    <div id="tableFruit">
+      <table class="table" border="1">
+        <thead>
+          <tr>
+            <td>No.</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>onSale</td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let fruit of fruitObject let i = index">
+          <tr >
+            <td>{{i+1}}</td>
+            <td>{{fruit.name}}</td>
+            <td class="right"><span [ngClass]="{'oddNum': fruit.price <= 10}">{{fruit.price | currency}}</span></td>
+            <td><span *ngIf="fruit.sale">On sale!</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  </table>
-
+</div>
+<div id="cityList">
   <h3>City</h3>
   <select id="city" (change)="changeCity($event)">
     <option *ngFor="let data of CountryData" value="{{data.city}}">{{data.city}}</option>

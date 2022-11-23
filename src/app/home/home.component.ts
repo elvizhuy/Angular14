@@ -12,6 +12,26 @@ export class HomeComponent implements OnInit {
   public titleName = 'Elviz';
   public age = 25;
 
+  public Fruits = [
+    'Apple',
+    'WaterMelon',
+    'Mango',
+    'Orange',
+    'Kiwi',
+    'Strawberry',
+    'Blueberry',
+  ];
+
+  public fruitObject = [
+    {name:'Apple',price:10,sale:true},
+    {name:'WaterMelon',price:12,sale:false},
+    {name:'Mango',price:15,sale:false},
+    {name:'Orange',price:7,sale:true},
+    {name:'Kiwi',price:14,sale:false},
+    {name:'Strawberry',price:8,sale:true},
+    {name:'Blueberry',price:9,sale:true},
+]
+
   public CountryData = [
     {
       city: '-- Cities --',
