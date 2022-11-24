@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     {name:'Blueberry',price:9,sale:true},
 ]
 
+
   public CountryData = [
     {
       city: '-- Cities --',
