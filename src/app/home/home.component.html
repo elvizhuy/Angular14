@@ -47,8 +47,8 @@
           <tr >
             <td>{{i+1}}</td>
             <td>{{fruit.name}}</td>
-            <td class="right"><span [ngClass]="{'oddNum': fruit.price <= 10}">{{fruit.price | currency}}</span></td>
-            <td><span *ngIf="fruit.sale">On sale!</span></td>
+            <td class="right"><span [ngClass]="{'oddNum': fruit.price <= 10}">{{fruit.price | currency:"VND":"symbol":"1.2"}}</span></td>
+            <td><span>{{fruit.sale | onSale}}</span></td>
           </tr>
         </tbody>
       </table>
