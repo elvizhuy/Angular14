@@ -1,17 +1,17 @@
+import { CommonService } from './../Services/common.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-templatedrivenform',
   templateUrl: './templatedrivenform.component.html',
-  styleUrls: ['./templatedrivenform.component.scss']
+  styleUrls: ['./templatedrivenform.component.scss'],
 })
 export class TemplatedrivenformComponent implements OnInit {
   public name = '';
-  constructor() { }
+  constructor(private common: CommonService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   public submitForm(): void {
-    console.log(this.name);
+    this.common.submitData({name:this.name,age:30});
   }
 }
