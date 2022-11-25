@@ -1,0 +1,77 @@
+
+<div>
+  <span>Counter = {{counter}}</span><br>
+<span>Counter^2 = {{counterBinhPhuong}}</span>
+</div>
+
+<div class="learning">
+  <h1>this is component HOME</h1>
+  <h1>Data binding</h1>
+  <p>{{name}}</p>
+  <input type="text" value="{{name}}">
+  <br>
+  <input type="text" [value]="subName" title="This is {{titleName}}">
+  <br>
+  <input type=" text" [value]="name" [title]="'This is ' + titleName">
+
+  <h3 *ngIf="age > 25">You r too old</h3>
+  <h3 *ngIf="age <= 25">You r still young</h3>
+
+  <div *ngIf="age > 25;then young;else old"></div>
+  <ng-template #young>
+    <h3> You r still young!</h3>
+  </ng-template>
+  <ng-template #old>
+    <h3>You r too old!</h3>
+  </ng-template>
+
+  <h1>Event Binding</h1>
+  <input type="text" [(ngModel)]="fullname">
+  <p>Hi! {{fullname}}</p>
+  <button (click)="resetName()">Reset</button>
+</div>
+
+<div class="learning2">
+
+  <div id="fruitList">
+    <h3>Fruits</h3>
+    <ul *ngFor="let fruit of Fruits">
+      <li value="{{fruit}}">{{fruit}}</li>
+    </ul>
+  </div>
+  <div id="tableFruit">
+    <table class="table" border="1">
+      <thead>
+        <tr>
+          <td>No.</td>
+          <td>Name</td>
+          <td>Price</td>
+          <td>onSale</td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let fruit of fruitObject let i = index">
+        <tr>
+          <td>{{i+1}}</td>
+          <td>{{fruit.name}}</td>
+          <td class="right"><span [ngClass]="{'oddNum': fruit.price <= 10}">{{fruit.price |
+              currency:"VND":"symbol":"1.2"}}</span></td>
+          <td><span>{{fruit.sale | onSale}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="cityList">
+  <h3>City</h3>
+  <select id="city" (change)="changeCity($event)">
+    <option *ngFor="let data of CountryData" value="{{data.city}}">{{data.city}}</option>
+  </select>
+  <h3>District</h3>
+  <select id="district">
+    <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
+  </select>
+</div>
+
+
+
+

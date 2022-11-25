@@ -1,0 +1,66 @@
+body {
+  display: flex;
+}
+
+.learning {
+  background-color: rgb(34, 111, 114);
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  box-shadow: 7px 10px rgb(112, 226, 230);
+  height: auto;
+  padding: 20px 0;
+  display: inline-block;
+}
+.learning2 {
+  background-color: rgb(172, 166, 84);
+  width: 56%;
+  display: inline-block;
+  float: right;
+  text-align: center;
+  box-shadow: 7px 10px rgb(238, 240, 142);
+}
+h1 {
+  color: white;
+}
+input,
+button,
+select {
+  padding: 15px 20px;
+}
+
+#fruitList {
+  float: left;
+  text-align: left;
+  width: 25%;
+  margin: 0;
+  display: inline-block;
+}
+#tableFruit {
+  width: 65%;
+  display: inline-block;
+}
+table {
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.oddNum {
+  color: rgb(238, 136, 52);
+}
+.right {
+  text-align: right;
+}
+
+#cityList {
+  background-color: rgb(243, 120, 120);
+  box-shadow: 7px 10px rgb(236, 154, 154);
+  width: 30%;
+  text-align: center;
+  position: absolute;
+  transform: translate(171%, -102%);
+  padding: 20px;
+}
