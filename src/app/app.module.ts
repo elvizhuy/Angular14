@@ -8,9 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { OnSalePipe } from './on-sale.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HighLightDirective } from './Directives/high-light.directive';
+import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HomeComponent, OnSalePipe, PageNotFoundComponent, HighLightDirective],
+  declarations: [AppComponent, AboutComponent, HomeComponent, OnSalePipe, PageNotFoundComponent, HighLightDirective, TemplatedrivenformComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
