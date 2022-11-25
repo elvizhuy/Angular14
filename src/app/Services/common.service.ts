@@ -15,4 +15,7 @@ export class CommonService {
   public setCounter(n:number):void{
     this.counter = n
   }
+  public submitData (name:string){
+
+  }
 }
