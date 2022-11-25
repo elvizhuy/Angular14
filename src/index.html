@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" ng-app="Angular14">
+
 <head>
   <meta charset="utf-8">
   <title>Angular14-HNN</title>
@@ -9,9 +10,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 </head>
-<body>
-  
-<!-- <div ng-app="">
+
+<body ng-controller="myCtrl">
+  <!-- <label for="">Enter your name</label>
+  <input type="text" ng-model="name">
+  <p>{{name}}</p>
+  <button ng-click="sayName()">click me</button>
+  <p>{{'result of Divide = ' + (x / y)}}</p>
+  <script>
+    let app = angular.module("Angular14", [])
+    app.controller("myCtrl", ($scope) => {
+      $scope.x = 100
+      $scope.y = 5
+      $scope.name = 'Huy'
+      $scope.sayName = () => {
+        $scope.name = 'hello world'
+      }
+    })
+
+
+  </script> -->
+  <!-- <div ng-app="">
   <p>Input something in the input box:</p>
   <p>Name: <input type="text" ng-model="name"></p>
   <p ng-bind="name"></p>
@@ -45,7 +64,7 @@
   <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
 </div> -->
 
-<!--AngularJS Strings
+  <!--AngularJS Strings
 <div ng-app="" ng-init="firstName='Daniel';lastName='Davies'">
   <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
 </div>
@@ -53,7 +72,7 @@
   <p>My name is {{firstName +' '+ lastName}}</p>
 </div>
 
-<!--AngularJS Object
+AngularJS Object
 <div ng-app="" ng-init="person={firstName:'Daniel',lastName:'davies'}">
   <p>The name is {{ person.lastName }}</p>
 </div>
@@ -61,7 +80,7 @@
   <p>The name is <span ng-bind="person.lastName"></span></p>
 </div>
 
-<!--AngularJS Arrays
+AngularJS Arrays
 <div ng-app="" ng-init="points=[1,15,19,2,40]">
   <p>The third result is {{ points[2] }}</p>
 </div>
@@ -69,10 +88,10 @@
   <p>The third result is <span ng-bind="points[2]"></span></p>
 </div> -->
 
-<!--AngularJS Expressions vs. JavaScript Expressions-->
+  <!--AngularJS Expressions vs. JavaScript Expressions-->
 
-<!--AngularJS Modules-->
-<!-- <p>Try to change the names.</p>
+  <!--AngularJS Modules-->
+  <!-- <p>Try to change the names.</p>
 <div ng-app="" ng-controller="Ctrl1">
   First Name: <input type="text" ng-model="firstName"><br>
   Last Name: <input type="text" ng-model="lastName"><br>
@@ -87,29 +106,30 @@ $scope.lastName= "Huy";
 });
 </script> -->
 
-<!--<div ng-app="">-->
-<!--  <div  ng-controller="Ctrl2">-->
-<!--    {{ Email + " " + Address }}-->
-<!--  </div>-->
-<!--  <div  ng-controller="Ctrl3">-->
-<!--    {{ phone + " " + age }}-->
-<!--  </div>-->
-<!--</div>-->
+  <!--<div ng-app="">-->
+  <!--  <div  ng-controller="Ctrl2">-->
+  <!--    {{ Email + " " + Address }}-->
+  <!--  </div>-->
+  <!--  <div  ng-controller="Ctrl3">-->
+  <!--    {{ phone + " " + age }}-->
+  <!--  </div>-->
+  <!--</div>-->
 
-<!--<script>-->
-<!--  let app = angular.module("Ang-02", []);-->
-<!--  app.controller("Ctrl2", ($scope) => {-->
-<!--    $scope.Email = "Elvizhuy@gmail.com";-->
-<!--    $scope.Address = "HaNoi";-->
-<!--  });-->
+  <!--<script>-->
+  <!--  let app = angular.module("Ang-02", []);-->
+  <!--  app.controller("Ctrl2", ($scope) => {-->
+  <!--    $scope.Email = "Elvizhuy@gmail.com";-->
+  <!--    $scope.Address = "HaNoi";-->
+  <!--  });-->
 
-<!--  let app = angular.module("Ang-02", []);-->
-<!--  app.controller("Ctrl3", ($scope) => {-->
-<!--    $scope.phone = "0932299609";-->
-<!--    $scope.age = 32;-->
-<!--  });-->
-<!--</script>-->
+  <!--  let app = angular.module("Ang-02", []);-->
+  <!--  app.controller("Ctrl3", ($scope) => {-->
+  <!--    $scope.phone = "0932299609";-->
+  <!--    $scope.age = 32;-->
+  <!--  });-->
+  <!--</script>-->
 
 </body>
+
 </html>
- <app-root></app-root>
+<app-root></app-root>

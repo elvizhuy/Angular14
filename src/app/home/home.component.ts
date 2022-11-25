@@ -1,3 +1,4 @@
+import { CommonService } from './../Services/common.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -23,15 +24,14 @@ export class HomeComponent implements OnInit {
   ];
 
   public fruitObject = [
-    {name:'Apple',price:10,sale:true},
-    {name:'WaterMelon',price:12,sale:false},
-    {name:'Mango',price:15,sale:false},
-    {name:'Orange',price:7,sale:true},
-    {name:'Kiwi',price:14,sale:false},
-    {name:'Strawberry',price:8,sale:true},
-    {name:'Blueberry',price:9,sale:true},
-]
-
+    { name: 'Apple', price: 10, sale: true },
+    { name: 'WaterMelon', price: 12, sale: false },
+    { name: 'Mango', price: 15, sale: false },
+    { name: 'Orange', price: 7, sale: true },
+    { name: 'Kiwi', price: 14, sale: false },
+    { name: 'Strawberry', price: 8, sale: true },
+    { name: 'Blueberry', price: 9, sale: true },
+  ];
 
   public CountryData = [
     {
@@ -84,10 +84,14 @@ export class HomeComponent implements OnInit {
   ];
 
   public districts: string[] = [];
-  constructor() {}
-
+  constructor(private coMMon: CommonService) {}
+  public counter = 0;
+  public counterBinhPhuong = 0;
   ngOnInit(): void {
     console.log('VietnamCities = ', this.CountryData);
+    this.counter = this.coMMon.getCounter();
+    this.counterBinhPhuong = this.coMMon.binhphuong(this.counter);
+    this.counter++;
   }
 
   public resetName(): void {

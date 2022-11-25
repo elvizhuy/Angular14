@@ -1,9 +1,8 @@
-
-body{
+body {
   display: flex;
 }
 
-.learning{
+.learning {
   background-color: rgb(34, 111, 114);
   width: 40%;
   margin: auto;
@@ -13,18 +12,20 @@ body{
   padding: 20px 0;
   display: inline-block;
 }
-.learning2{
-  background-color:rgb(172, 166, 84);
+.learning2 {
+  background-color: rgb(172, 166, 84);
   width: 56%;
   display: inline-block;
   float: right;
   text-align: center;
   box-shadow: 7px 10px rgb(238, 240, 142);
 }
-h1{
+h1 {
   color: white;
 }
-input,button,select{
+input,
+button,
+select {
   padding: 15px 20px;
 }
 
@@ -35,11 +36,11 @@ input,button,select{
   margin: 0;
   display: inline-block;
 }
-#tableFruit{
+#tableFruit {
   width: 65%;
   display: inline-block;
 }
-table{
+table {
   text-align: center;
   width: 100%;
   background-color: white;
@@ -47,9 +48,19 @@ table{
   border-collapse: collapse;
 }
 
-.oddNum{
+.oddNum {
   color: rgb(238, 136, 52);
 }
-.right{
+.right {
   text-align: right;
+}
+
+#cityList {
+  background-color: rgb(243, 120, 120);
+  box-shadow: 7px 10px rgb(236, 154, 154);
+  width: 30%;
+  text-align: center;
+  position: absolute;
+  transform: translate(171%, -102%);
+  padding: 20px;
 }
