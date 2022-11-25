@@ -4,11 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'home', component: HomeComponent },
   { path: 'templatedrivenform', component:TemplatedrivenformComponent },
+  { path: 'reactiveform', component:ReactiveFormComponent },
+
   { path: '**', component: PageNotFoundComponent },
 
 ];

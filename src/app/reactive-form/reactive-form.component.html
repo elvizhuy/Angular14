@@ -1,0 +1,54 @@
+<p>reactive-form works!</p>
+
+<div class="form-control">
+  <form [formGroup]="formData" (submit)="submitReactForm()">
+    <table>
+      <tr>
+        <td><label>First Name: </label></td>
+        <td><input name="firstname" type="text" formControlName="firstname"></td>
+        <td><div *ngIf="!formData.controls.firstname.valid" style="color:white">Firstname is required!</div></td>
+      </tr>
+
+      <tr>
+        <td><label>Last Name: </label></td>
+        <td><input name="lastname" type="text" formControlName="lastname"></td>
+        <td><div *ngIf="formData.controls.lastname.invalid" style="color:white">Lastname is required!</div></td>
+
+      </tr>
+
+      <tr>
+        <td><label>Age: </label></td>
+        <td><input type="text" formControlName="age"></td>
+      </tr>
+      <tr>
+        <td> <label>Address: </label></td>
+        <td> <input type="text" formControlName="address"></td>
+        <td><div *ngIf="formData.controls.address.invalid" style="color:white">Address invalid!</div></td>
+
+      </tr>
+
+      <tr>
+        <td><label>Street: </label></td>
+        <td><input type="text" formControlName="street"></td>
+      </tr>
+
+      <tr>
+        <td> <label>City: </label></td>
+        <td> <input type="text" formControlName="city"></td>
+      </tr>
+
+      <tr>
+        <td> <label>State: </label></td>
+        <td> <input type="text" formControlName="state"></td>
+      </tr>
+
+      <tr>
+        <td><label>Zip: </label></td>
+        <td><input type="text" formControlName="zip"></td>
+      </tr>
+      <tr>
+        <td><button [disabled]="!formData.valid" type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
