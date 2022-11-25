@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
@@ -11,10 +12,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HighLightDirective } from './Directives/high-light.directive';
 import { TemplatedrivenformComponent } from './templatedrivenform/templatedrivenform.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { GetdataComponent } from './getdata/getdata.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HomeComponent, OnSalePipe, PageNotFoundComponent, HighLightDirective, TemplatedrivenformComponent, ReactiveFormComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule,ReactiveFormsModule],
+  declarations: [AppComponent, AboutComponent, HomeComponent, OnSalePipe, PageNotFoundComponent, HighLightDirective, TemplatedrivenformComponent, ReactiveFormComponent, GetdataComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,ReactiveFormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
